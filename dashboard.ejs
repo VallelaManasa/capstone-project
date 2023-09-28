@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            #section-1{
+                height:150px;
+            }
+            nav{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 500px;
+                width: 100%;
+                height: 100px;
+                background-color: black;
+                padding: 10px;
+                position: relative;
+            }
+            nav ul{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap:0 35px;
+                font-size: 1.2rem;
+                margin-left: 20px;
+            }
+            nav a{
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+            }
+            nav a:hover{
+                border-bottom: 2px solid hsl(0,0%,100%);
+                transition: 1s;
+            }
+            .logo {
+            
+            width: 40px;
+            height: auto; 
+            position: absolute;
+            top: 40px; 
+            left: 80px; 
+        }
+        #section-2{
+            height:80px;
+   
+ 
+        }
+        .search-box{
+            width:40%;
+            padding-left:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:60px;
+            border:2px solid #1f1e1e;
+            overflow: hidden;
+            border-radius:30%;
+            margin-left:450px;
+        }
+        .search-input{
+            height:60px;
+            width:50%;
+            border:none;
+            padding-left: 20px;
+            outline:none;
+            font-size: 18px;
+            color:black;
+            font-weight: bold;
+            flex:1px;
+            border: 2px solid transparent;
+
+        }
+        .search-input:focus {
+  border-color: green; 
+}
+        .search-logo {
+            width: 60px; 
+            height: 60px; 
+            margin-left: 10px; 
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        #section-3{
+            height:100px;
+        }
+
+        .head{
+            text-align:center;
+            
+        }
+       .dis{
+        
+        display: flex;
+    justify-content: center;
+    align-items: center;
+
+       }
+       .dis img{
+        width:200px;
+        height:200px;
+        margin-right:300px;
+        justify-content:center;
+    
+       }
+       #movies-container{
+        align-items: center;
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  .dis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-card {
+    margin-bottom: 100px; 
+    
+  }
+
+  .movie-info {
+    margin-top: 10px;
+  }
+
+  .movie-card img {
+    width: 200px; 
+    height: auto;
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+       
+        
+
+       
+
+        </style>
+    </head>
+    <body>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <li>
+                <a href="home">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+						<span>Downloads</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+						<span>Favorites</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+						<span>Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="starting">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+          </div>
+        <section class="section-1">
+            <nav>
+                
+                <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAMAAAC4uKf/AAAAMFBMVEX///8AAABERETt7e1aWlqXl5eDg4Pu7u7MzMwQEBCUlJS/v7/CwsJAQEDOzs6EhIRuN22mAAAAk0lEQVRoge3WSQ6AMAwEQUwI+/L/3wJHAhckj3Pp+kBLyETTNAAAAFWluWvddXP6auXJJKb8bvWa1K0vW4uuZbYWsU0Za4vjULbMhkds1MbGyNhe7zOGHkjs6St/6uP9hEQ+V9eRZMVDnD8fYgBAbczv35jfTpjfLpjfDpjfAIBAzO/fmN9OmN8umN8OmN8AAAASJ8ewE/w22QSFAAAAAElFTkSuQmCC" class="logo">
+                </span>
+                
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyZAt0hD9RxNYb0NBPqkgzFvksyOIKbfe58w&usqp=CAU"style="width:300px; height:110px;" >
+            </nav>
+
+        </section>
+
+        <section class="head" style="color:coral;"><h2>SEARCH YOUR FAVOURITE MOVIES....... </h2></section>
+
+
+        <div id="section-2">
+            <form id="searchForm">
+                <div class="search-box">
+                    <input type="text" placeholder="Search for a movie" name="movienamesearch" class="search-input" id="searchInput">
+                    <button type="submit" class="search-logo">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+
+<!-- <section class="dis">
+    <div id="movies-container">
+        <% userData.forEach(movie => { %>
+          <div class="movie-card">
+            <div class="movie-info">
+              <h2><%= movie.title %></h2>
+              <span class="green">Vote Average: <%= movie.vote_average %></span>
+            
+              <p>Release Date: <%= movie.release_date %></p>
+              <p>Overview: <%= movie.overview %></p>
+            </div>
+            <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+          </div>
+        <% }); %>
+      </div>
+      
+</section> -->
+
+
+<section class="dis">
+    <div id="movies-container">
+      <% userData.forEach(movie => { %>
+        <div class="movie-card">
+          <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+        </div>
+          <div class="movie-info">
+            <h2><%= movie.title %></h2>
+            <span class="green">Vote Average: <%= movie.vote_average %></span>
+            <!-- Additional movie-related content here -->
+            <p>Release Date: <%= movie.release_date %></p>
+            <p>Overview: <%= movie.overview %></p>
+          </div>
+       
+      <% }); %>
+    </div>
+  </section>
+  
+
+
+        
+  
+    
+        
+    
+
+        
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+
+            document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        const searchInput = document.getElementById('searchInput').value;
+        fetchMovieData(searchInput);
+    });
+
+    function fetchMovieData(moviename) {
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=9325d02aa9a72472fb922c4f28e38d5a&query=${encodeURIComponent(moviename)}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const movieData = data.results || [];
+                const moviesContainer = document.getElementById('movies-container');
+                moviesContainer.innerHTML = ''; // Clear previous movie cards
+
+                movieData.forEach(movie => {
+                    const movieCard = document.createElement('div');
+                    movieCard.classList.add('movie');
+                    movieCard.innerHTML = `
+                        <h2>${movie.title}</h2>
+                        <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title} poster">
+                        <div class="movie-info">
+                        <h2>${movie.title}</h2>
+                         <span class="green">Vote Average: ${movie.vote_average}</span>
+                         <p>Release Date: ${movie.release_date}</p>
+                          <p>Overview: ${movie.overview}</p>
+                        </div>
+                    `;
+                    moviesContainer.appendChild(movieCard);
+                });
+            })
+            .catch(error => console.error('Error fetching movie data:', error));
+    }
+
+
+
+        </script>
+
+    </body>
+</html>

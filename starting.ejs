@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+     body{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      background:url("https://images.pexels.com/photos/1076885/pexels-photo-1076885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
+      background-size:cover;
+      background-position:center;
+      font-family: "Trirong", serif;
+     }
+     .box{
+      width:420px;
+      background:transparent;
+      border:2px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(20px);
+      box-shadow:0 0 10px rgba(0,0,0,.2);
+      color:#fff;
+      border-radius:10px;
+      padding:30px 40px;
+     }
+     button{
+      width:100px;
+      height:45px;
+      border-radius:30px;
+     }
+     .box img{
+      position:absolute;
+      top:-50px;
+      left:48%;
+      transform:translateX(-50%);
+      border-radius:50%;
+      width:100px;
+      height:100px;
+     }
+     .head{
+             position: absolute;
+            top: 50px; /* Adjust the top position as needed */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color:rgb(10, 10, 10);
+            text-shadow:2px 2px rgb(10,10,10);
+     }
+     .main img{
+            position: absolute;
+            top: 50px; /* Adjust the top position as needed */
+            left: 0;
+            width: 100%;
+            text-align: center;
+     }
+     
+     </style>
+  </head>
+  <body><div class="main">
+    
+    <h2 class="head">WELCOME TO THE MOVIES WORLD</h2>
+    </div>
+
+    <div class="box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT13LbIOBQ6BMbedGulJBopH_JfcV1oS999QQ&usqp=CAU" alt="monkey">
+          <h2>SIGNUP/SIGNIN</h2>
+          <p>Already have an account??</p>
+          
+          <a href="http://localhost:3001/signin">
+            <button>Sign In</button>
+          </a>
+          
+         <p>new to site...then signup</p>
+         <div>
+          <a href="http://localhost:3001/signup">
+            <button>Sign up</button>
+          </a>
+         </div>
+         
+    </div>
+  </body>
+</html>
+
+

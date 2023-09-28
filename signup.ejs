@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+
+        }
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:#23242a;
+        }
+        .box{
+            position:relative;
+            width:380px;
+            height:450px;
+            background:#1c1c1c;
+            border-radius:8px;
+            overflow:hidden;
+        }
+        .box::before{
+            content: '';
+            position:absolute;
+            top:-50%;
+            left:-50%;
+            width:380px;
+            height:420px;
+            background:linear-gradient(0deg,transparent,
+            transparent,#45f3ff,#45f3ff,#45f3ff);
+            z-index:1;
+            transform-origin:bottom right;
+            animation:animate 6s linear infinite;
+        }
+        .box::after{
+            content: '';
+            position:absolute;
+            top:-50%;
+            left:-50%;
+            width:380px;
+            height:420px;
+            background:linear-gradient(0deg,transparent,
+            transparent,#45f3ff,#45f3ff,#45f3ff);
+            z-index:1;
+            transform-origin:bottom right;
+            animation:animate 6s linear infinite;
+            animation-delay:-3s;
+        }
+        @keyframes animate{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        .box form{
+            position:absolute;
+            inset:4px;
+            background:#222;
+            padding:50px 40px;
+            border-radius:8px;
+            z-index:2;
+            display:flex;
+            flex-direction:column;
+        }
+        .box h2{
+            color:#fff;
+            font-weight:500;
+            text-align:center;
+            letter-spacing:0.1cm;
+            border-radius:25%;
+
+        }
+        .box form p{
+            color:#45f3ff
+        }
+        .wel {
+            position: absolute;
+            top: 50px; /* Adjust the top position as needed */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #45f3ff;
+        }
+        .image{
+            position:absolute;
+            top:50%;
+            right:0;
+            transform: translateY(-50%) rotate(30deg);
+            width:350px;
+            margin-left:40px;
+            cursor:pointer;
+        }
+        .image img{
+            border-radius:40%;
+            width:100%;
+            height:auto;
+        }
+        img:hover{
+            filter:drop-shadow(10px 10px 10px #45f3ff);
+        }
+        
+        
+        
+
+    </style>
+
+</head>
+
+<body>
+    <div class="wel">
+    <h1>Welcome to the Registration page</h1>
+    </div>
+    
+    <div class="box">
+        <h2>Signup</h2>
+    <form action="/signupsubmit" method="POST">
+       <p> Full name: </p><input type="text" name="full_name" required><br>
+
+       <p> Last name:</p> <input type="text" name="last_name" required><br>
+        
+       <p> Email ID: </p><input type="text" name="email"required ><br>
+        
+        <p>Password: </p><input type="password" name="password" required><br>
+        
+        <input type="submit" style="width:80px; height:40px;">
+        <p>Already have an account &nbsp;<a href="signin">signin</a></p>
+    </form>
+    </div>
+    <div class="image">
+        <img src="https://i.ibb.co/SsKMmwG/panda-panda-removebg-preview.png">
+    </div>
+
+
+</body>
+</html>
